@@ -151,6 +151,11 @@ SYNTAX: <a href="" class="no-external-icon"></a> */
 }
 
 /* Download Links */
+.dl-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 .dl-file,
 .dl-source,
 .dl-archive {

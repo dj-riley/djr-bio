@@ -1,14 +1,10 @@
 ---
 created: 2024-06-18 17:23:57 -04:00
-updated: 2024-07-09 01:09:44 -04:00
+updated: 2024-07-09 11:29:22 -04:00
 permalink: home
 ---
 
-%% MIT License
-
-Copyright (c) 2024 Dylan Riley <https://djr.bio> %%
-
-![GitHub License](https://img.shields.io/github/license/dj-riley/djr-bio) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/dj-riley/djr-bio) ![GitHub Repo stars](https://img.shields.io/github/stars/dj-riley/djr-bio)
+![GitHub License](https://img.shields.io/github/license/dj-riley/djr-bio) ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/dj-riley/djr-bio) ![GitHub Repo stars](https://img.shields.io/github/stars/dj-riley/djr-bio)
 
 # Welcome
 
