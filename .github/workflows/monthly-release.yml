@@ -1,0 +1,63 @@
+# MIT License 
+# Copyright (c) 2024 Dylan Riley <https://djr.bio>
+# monthly-release.yaml - Automated monthly repo releases via GitHub Actions
+
+name: Monthly Release
+
+on:
+  schedule:
+    # Runs at 00:00 (EST) on the 1st day of every month
+    - cron: '0 4 1 * *'
+  workflow_dispatch:
+    inputs:
+      release_type:
+        description: 'Choose release type'
+        required: true
+        default: 'dry-run'
+        type: choice
+        options:
+          - 'dry-run'
+          - 'release'
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Determine if dry run
+      id: dry_run_check
+      run: |
+        if [[ "${{ github.event.inputs.release_type }}" == "dry-run" ]]; then
+          echo "DRY_RUN=true" >> $GITHUB_ENV
+        else
+          echo "DRY_RUN=false" >> $GITHUB_ENV
+        fi
+
+    - name: Setup environment variables
+      id: vars
+      run: |
+        echo "RELEASE_DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
+    - name: Generate conventional changelog
+      id: changelog
+      uses: TriPSs/conventional-changelog-action@v5.3.0
+      with:
+        github-token: "${{ secrets.GITHUB_TOKEN }}"
+        output-file: false
+        skip-version-file: true
+
+    - name: Create GH Release
+      id: create_release
+      if: github.event_name != 'workflow_dispatch' || env.DRY_RUN == 'false'
+      uses: softprops/action-gh-release@v2.0.6
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        tag_name: ${{ env.RELEASE_DATE }}
+        name: ${{ env.RELEASE_DATE }}
+        body: ${{ steps.changelog.outputs.clean_changelog }}
+        make_latest: true
+        draft: false
+        prerelease: false

@@ -1,0 +1,389 @@
+/* MIT License
+Copyright (c) 2024 Dylan Riley <https://djr.bio>
+Obsidian Publish static asset for djr.bio */
+
+
+/* ------------- */
+/* PUBLISH THEME */
+/* ------------- */
+/* https://docs.obsidian.md/Themes/Obsidian+Publish+themes/Build+a+Publish+theme */
+
+/* Variables that do not change when light or dark mode is enabled */
+.published-container {
+	
+}
+
+/* Variables for when light mode is enabled */
+.theme-light {
+	
+}
+
+/* Variables for when dark mode is enabled */
+.theme-dark {
+
+}
+
+
+/* ---------------------- */
+/* MODIFY DEFAULT PUBLISH */
+/* ---------------------- */
+
+/* Site Footer 
+Hide on small/medium screen */
+@media (max-width: 1000px) {
+	.site-footer {
+		display: none;
+	}
+}
+
+/* Site Title Text
+Left Sidebar */
+.site-body-left-column-site-name {
+	display: none;
+}
+/* Mobile */
+.site-header-text {
+	display: none;
+}
+
+/* Frontmatter
+Show frontmatter (hidden by default, YAML only) */
+.frontmatter {
+	display: block !important;
+	margin-top: 0.75em;
+	font-size: 75%;
+}
+
+/* Interactive Graph
+Hide 'Interactive Graph' section header text */
+.graph-view-outer .list-item.published-section-header {
+	display: none;
+}
+.graph-view-container {
+	margin-top: 0;
+}
+
+/* Light/Dark Mode Toggle
+PC: Fullscreen, move to upper right corner */
+.site-body-left-column-site-theme-toggle {
+	position: fixed;
+	top: 0px;
+	right: 32px;
+	margin: 5px;
+	z-index: 1000;
+}
+/* PC: 1st auto collapse (no graph view) */
+@media (max-width: 1000px) {
+	.site-body-left-column-site-theme-toggle {
+		position: fixed;
+		top: 0px;
+		right: 5px;
+		margin: 5px;
+		z-index: 1000;
+	}
+}
+/* Mobile: 2nd auto collapse, move toggle back to default location */
+@media (max-width: 750px) {
+	.site-body-left-column-site-theme-toggle {
+		position: relative;
+		top: auto;
+		right: auto;
+		margin: auto;
+		z-index: auto;
+	}
+}
+
+
+/* ----------------------- */
+/* MODIFY DEFAULT MARKDOWN */
+/* ----------------------- */
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+	/* Remove horizontal line after header text */
+	border-bottom: none !important;
+	/* Minimize spacing before and after */
+	line-height: 1.25 !important;
+	margin: 2px 0 !important;
+	padding: 1px 0 !important;
+}
+
+/* Table Headers 
+Set column header row color & alternate row color */
+th {
+	background-color: var(--text-selection) !important;
+	text-shadow: -1px -1px 0 var(--background-primary), 
+					1px -1px 0 var(--background-primary),
+				 -1px  1px 0 var(--background-primary), 
+					1px  1px 0 var(--background-primary);
+}
+tr:nth-child(odd) {
+	background-color: var(--background-primary) !important;
+}
+tr:nth-child(even) {
+	background-color: var(--background-secondary) !important;
+}
+
+
+/* ---------- */
+/* CUSTOM CSS */
+/* ---------- */
+
+/* Image Alignment
+Center: ![[image.png|center|256]] OR ![Photo | center | 256](image.png) */
+img[alt*="center"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+/* Right: ![[image.png|right|256]] OR ![Photo | right | 256](image.png) */
+img[alt*="right"] {
+	display: block;
+	margin-left: auto;
+	margin-right: 0px;
+}
+
+/* External Links, remove arrow icon
+SYNTAX: <a href="" class="no-external-icon"></a> */
+.no-external-icon {
+	background-image: none;
+	padding-right: 0px;
+}
+
+/* Download Links */
+.dl-file,
+.dl-source,
+.dl-archive {
+	text-decoration: none;
+	border: none;
+	display: inline-block;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 48px;
+	height: 48px;
+}
+.dl-file {
+	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWZpbGUtZG93biI+PHBhdGggZD0iTTE1IDJINmEyIDIgMCAwIDAtMiAydjE2YTIgMiAwIDAgMCAyIDJoMTJhMiAyIDAgMCAwIDItMlY3WiIvPjxwYXRoIGQ9Ik0xNCAydjRhMiAyIDAgMCAwIDIgMmg0Ii8+PHBhdGggZD0iTTEyIDE4di02Ii8+PHBhdGggZD0ibTkgMTUgMyAzIDMtMyIvPjwvc3ZnPg==');
+}
+.dl-source {
+	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWZpbGUtbmFtZXMiPjxwYXRoIGQ9Ik0xMCAxMi41IDggMTVsMiAyLjUiLz48cGF0aCBkPSJtMTQgMTIuNSAyIDIuNS0yIDIuNSIvPjxwYXRoIGQ9Ik0xNCAydjRhMiAyIDAgMCAwIDIgMmg0Ii8+PHBhdGggZD0iTTE1IDJINmEyIDIgMCAwIDAtMiAydjE2YTIgMiAwIDAgMCAyIDJoMTJhMiAyIDAgMCAwIDItMlY3eiIvPjwvc3ZnPg==');
+}
+.dl-archive {
+	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWZvbGRlci1hcmNoaXZlIj48Y2lyY2xlIGN4PSIxNSIgY3k9IjE5IiByPSIyIi8+PHBhdGggZD0iTTIwLjkgMTkuOEEyIDIgMCAwIDAgMjIgMThWOGEyIDIgMCAwIDAtMi0yaC03LjlhMiAyIDAgMCAxLTEuNjktLjlMOS42IDMuOUEyIDIgMCAwIDAgNy45MyAzSDRhMiAyIDAgMCAwLTIgMnYxM2EyIDIgMCAwIDAgMiAyaDUuMSIvPjxwYXRoIGQ9Ik0xNSAxMXYtMSIvPjxwYXRoIGQ9Ik0xNSAxN3YtMiIvPjwvc3ZnPg==');
+}
+
+
+/* Embed Adjustments
+SOURCE: https://github.com/SlRvb/Obsidian--ITS-Theme/blob/main/Snippets/S%20-%20Embed%20Adjustments.css 
+SYNTAX:
+
+![[Embedded Note Link|attribute]]
+![[Embedded Note|full no-title]]
+
+Attribute       Description
+--------------------------------------------------------
+nlk             Hide the embed link icon
+lk-hvr          Hide embed unless hovering over embed
+lk-l            Move link to the left
+lk-clear        Make background of the link transparent
+nmg             Will remove margins and padding
+full            Display the full embed
+clean           Removes borders/etc to hide embed design
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+no-title        Hide the title of the embedded page
+no-h            Hide all headers in the embedded page
+no-h1           Hide all header 1s in the embedded page
+no-h2           Hide all header 2s in the embedded page
+no-h3           Hide all header 3s in the embedded page
+no-h4           Hide all header 4s in the embedded page
+no-h5           Hide all header 5s in the embedded page
+no-h6           Hide all header 6s in the embedded page
+*/
+
+.internal-embed:not(.image-embed)[alt*=htiny] .markdown-embed-content {
+	height: var(--tiny);
+}
+.internal-embed:not(.image-embed)[alt*=hsmall] .markdown-embed-content {
+	height: var(--small);
+}
+.internal-embed:not(.image-embed)[alt*=hs-med] .markdown-embed-content {
+	height: var(--small-med);
+}
+.internal-embed:not(.image-embed)[alt*=hm-sm] .markdown-embed-content {
+	height: var(--med-small);
+}
+.internal-embed:not(.image-embed)[alt*=hmed] .markdown-embed-content {
+	height: var(--medium);
+}
+.internal-embed:not(.image-embed)[alt*=hm-tl] .markdown-embed-content {
+	height: var(--med-tall);
+}
+.internal-embed:not(.image-embed)[alt*=htall] .markdown-embed-content {
+	height: var(--tall);
+}
+.internal-embed:not(.image-embed)[alt*=full] .markdown-embed-content, .internal-embed:not(.image-embed)[alt*=full] .markdown-embed-content > .markdown-preview-view {
+	max-height: unset;
+}
+.internal-embed:not(.image-embed)[alt*=wtiny] {
+	width: 20%;
+}
+.internal-embed:not(.image-embed)[alt*=wsmall] {
+	width: 30%;
+}
+.internal-embed:not(.image-embed)[alt*=ws-med] {
+	width: 40%;
+}
+.internal-embed:not(.image-embed)[alt*=wm-small] {
+	width: 50%;
+}
+.internal-embed:not(.image-embed)[alt*=wmed] {
+	width: 60%;
+}
+.internal-embed:not(.image-embed)[alt*=wm-tl] {
+	width: 80%;
+}
+.internal-embed:not(.image-embed)[alt*=wtall] {
+	width: 95%;
+}
+
+.internal-embed[alt*=right] {
+	float: right;
+	margin-left: 0.5em;
+}
+.internal-embed[alt*=left] {
+	float: left;
+	margin-right: 0.5em;
+}
+.internal-embed[alt*=center] {
+	margin: auto;
+}
+:not(.lp-embed-float) .is-live-preview .internal-embed:is([alt*=right], [alt*=left]) {
+	float: unset;
+}
+
+/*Embed Link Hide/Move*/
+.internal-embed:is([alt~=lk-hvr], [alt~=link-hover]):not(:hover) .markdown-embed-link,
+.internal-embed:is([alt~=nlk], [alt~=no-link]) .markdown-embed-link {
+	display: none;
+}
+.internal-embed:is([alt*=lk-l], [alt~=link-left]) .markdown-embed-link {
+	left: 10px;
+	right: unset;
+}
+.internal-embed:is([alt*=lk-clear], [alt~=link-clear]) .markdown-embed-link {
+	background-color: transparent;
+}
+
+/*Title Hide/Show*/
+.internal-embed:is([alt~=no-t],
+[alt~=no-title]) .markdown-embed-title,
+.file-embed-title {
+	display: none;
+}
+
+.internal-embed:is([alt~=no-inline-title],
+[alt~=no-it]) .inline-title,
+.file-embed-title {
+	display: none;
+}
+
+.internal-embed:is([alt~=ttl],
+[alt~=title]) .markdown-embed-title,
+.file-embed-title {
+	display: block;
+}
+
+/*Hide Headings*/
+.internal-embed[alt~=no-h] .markdown-embed :is(h1,
+h2,
+h3,
+h4,
+h5,
+h6),
+.internal-embed[alt~=no-h].markdown-embed :is(h1,
+h2,
+h3,
+h4,
+h5,
+h6) {
+	display: none;
+}
+
+/*Hide Specific Headings*/
+.internal-embed[alt~=no-h1] .markdown-embed h1,
+.internal-embed[alt~=no-h2] .markdown-embed h2,
+.internal-embed[alt~=no-h3] .markdown-embed h3,
+.internal-embed[alt~=no-h4] .markdown-embed h4,
+.internal-embed[alt~=no-h5] .markdown-embed h5,
+.internal-embed[alt~=no-h6] .markdown-embed h6,
+.internal-embed[alt~=no-h1].markdown-embed h1,
+.internal-embed[alt~=no-h2].markdown-embed h2,
+.internal-embed[alt~=no-h3].markdown-embed h3,
+.internal-embed[alt~=no-h4].markdown-embed h4,
+.internal-embed[alt~=no-h5].markdown-embed h5,
+.internal-embed[alt~=no-h6].markdown-embed h6 {
+	display: none;
+}
+
+.internal-embed:is([alt~=no-margin], [alt~=nmg]) {
+	--embed-padding: 0;
+	--embed-title-padding: 0;
+}
+
+.internal-embed[alt~=collapse] {
+	--embed-padding:0;
+	--embed-title-padding: 0;
+	--p-spacing: 0;
+}
+.internal-embed[alt~=collapse] *:not(.tag, .callout) {
+	margin-block-start: 0;
+	margin-block-end: 0;
+}
+
+body.embed-mini-headers .markdown-embed {
+	--h1-size: var(--embed-header-size);
+	--h2-size: var(--embed-header-size);
+	--h3-size: var(--embed-header-size);
+	--h4-size: var(--embed-header-size);
+	--h5-size: var(--embed-header-size);
+	--h6-size: var(--embed-header-size);
+}
+
+/*Clean Embeds*/
+.embed-clean .internal-embed > .markdown-embed, .embed-clean .internal-embed.is-loaded:not(.image-embed),
+.internal-embed[alt*=clean] > .markdown-embed,
+.internal-embed[alt*=clean].is-loaded:not(.image-embed) {
+	--embed-padding: 0;
+	border: none;
+	box-shadow: none;
+}
+.embed-clean .internal-embed > .markdown-embed:not(:hover), .embed-clean .internal-embed.is-loaded:not(.image-embed):not(:hover),
+.internal-embed[alt*=clean] > .markdown-embed:not(:hover),
+.internal-embed[alt*=clean].is-loaded:not(.image-embed):not(:hover) {
+	--embed-border-color: transparent;
+	--embed-border-left-color: var(--embed-border-color);
+	--embed-border-right-color: var(--embed-border-color);
+	--embed-border-top-color: var(--embed-border-color);
+	--embed-border-bottom-color: var(--embed-border-color);
+	--embed-border-left: var(--embed-thickness) var(--embed-border-type) var(--embed-border-left-color);
+	--embed-border-right: var(--embed-thickness) var(--embed-border-type) var(--embed-border-right-color);
+	--embed-border-top: var(--embed-thickness) var(--embed-border-type) var(--embed-border-top-color);
+	--embed-border-bottom: var(--embed-thickness) var(--embed-border-type) var(--embed-border-bottom-color);
+}
+.embed-clean .internal-embed.inline-embed,
+.internal-embed[alt*=clean].inline-embed {
+	--embed-title-padding: 0;
+}
+
+.embed-dark-background {
+	--embed-background: var(--embed-bg);
+	--embed-border-left-color: transparent;
+	--embed-border-color-hover: var(--accent);
+	--embed-border-left-color-hover: var(--embed-border-color-hover);
+	--embed-border-right-color-hover: var(--embed-border-color-hover);
+	--embed-border-top-color-hover: var(--embed-border-color-hover);
+	--embed-border-bottom-color-hover: var(--embed-border-color-hover);
+	--hr-icon-background: var(--embed-bg);
+	--blockquote-background-color: linear-gradient(to right, var(--note), transparent);
+	--table-border-color: var(--embed-bg);
+}
