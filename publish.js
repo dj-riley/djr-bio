@@ -82,3 +82,48 @@
 
 	await onDOMLoaded();
 })();
+
+
+// (async function setupDLlinks() {
+// 	async function onDOMLoaded() {
+// 		// Download File
+// 		var dlFile = document.querySelector('.dl-file');
+// 		if (dlFile) {
+// 			dlFile.addEventListener('click', function(event) {
+// 				event.preventDefault(); // Prevent default link behavior
+// 				window.print();			// Open print (save to PDF) prompt
+// 			});
+// 			console.log('[setupDLlinks] Done (file)');
+// 		} else {
+// 			console.error('[setupDLlinks] DL file element not found, no changes made');
+// 		}
+
+// 		// Download Source
+// 		var dlSource = document.querySelector('.dl-source');
+// 		if (dlSource) {
+// 			dlSource.addEventListener('click', function(event) {
+// 				let currentFilepath = this.app.render.currentFilepath;
+// 				let repoURL = `https://github.com/dj-riley/djr-bio/blob/main/${currentFilepath}`;
+// 				dlSource.href = repoURL;
+// 			});
+// 			console.log('[setupDLlinks] Done (source)');
+// 		} else {
+// 			console.error('[setupDLlinks] DL source element not found, no changes made');
+// 		}
+
+// 		// Download Archive
+// 		var dlArchive = document.querySelector('.dl-archive');
+// 		if (dlArchive) {
+// 			dlArchive.href = 'https://github.com/dj-riley/djr-bio/releases';
+// 			console.log('[setupDLlinks] Done (archive)');
+// 		} else {
+// 			console.error('[setupDLlinks] DL archive element not found, no changes made');
+// 		}
+// 	}
+
+// 	if (document.readyState === 'loading') {
+// 		await new Promise(resolve => document.addEventListener('DOMContentLoaded', resolve));
+// 	}
+
+// 	await onDOMLoaded();
+// })();
