@@ -63,6 +63,12 @@ Hide 'Interactive Graph' section header text */
 	margin-top: 0;
 }
 
+/* Published Section Header
+Hide 'ON THIS PAGE' text */
+.published-section-header {
+	display: none;
+}
+
 /* Light/Dark Mode Toggle
 PC: Fullscreen, move to upper right corner */
 .site-body-left-column-site-theme-toggle {
