@@ -1,7 +1,9 @@
 ---
 created: 2024-06-29 01:36:29 -04:00
-updated: 2024-07-04 14:54:36 -04:00
+updated: 2024-07-10 00:18:48 -04:00
 ---
+
+%% MIT License<br>Copyright (c) 2024 Dylan Riley <https://djr.bio> %%
 
 # Remove Branding From Obsidian Publish
 

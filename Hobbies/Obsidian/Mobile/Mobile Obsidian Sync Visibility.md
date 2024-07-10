@@ -1,7 +1,9 @@
 ---
 created: 2024-07-03 22:47:22 -04:00
-updated: 2024-07-04 16:47:14 -04:00
+updated: 2024-07-10 00:18:17 -04:00
 ---
+
+%% MIT License<br>Copyright (c) 2024 Dylan Riley <https://djr.bio> %%
 
 # Mobile Obsidian Sync Visibility
 

@@ -1,6 +1,6 @@
 ---
 created: 2024-07-02 02:58:53 -04:00
-updated: 2024-07-05 16:41:02 -04:00
+updated: 2024-07-10 00:19:33 -04:00
 permalink: license
 aliases: [MIT License]
 ---
