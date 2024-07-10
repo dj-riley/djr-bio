@@ -63,10 +63,14 @@ Hide 'Interactive Graph' section header text */
 	margin-top: 0;
 }
 
-/* Published Section Header
+/* Published Section Header (under graph view)
 Hide 'ON THIS PAGE' text */
 .published-section-header {
 	display: none;
+}
+/* Move up outline */
+.outline-view-outer {
+	padding-top: 0px;
 }
 
 /* Light/Dark Mode Toggle
@@ -97,6 +101,15 @@ PC: Fullscreen, move to upper right corner */
 		margin: auto;
 		z-index: auto;
 	}
+}
+
+/* Code Blocks
+Decrease tab whitespace size */
+pre code {
+	tab-size: 2;
+}
+code {
+	tab-size: 2;
 }
 
 
