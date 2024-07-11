@@ -1,6 +1,6 @@
 ---
 created: 2024-07-10 15:50:48 -04:00
-updated: 2024-07-10 16:26:54 -04:00
+updated: 2024-07-11 12:04:05 -04:00
 permalink: archive
 ---
 
@@ -27,11 +27,15 @@ This site - [djr.bio](https://djr.bio) - is configured to automate [monthly sour
 ### Download
 
 1. Navigate to the repository releases for this site via: [https://github.com/dj-riley/djr-bio/releases](https://github.com/dj-riley/djr-bio/releases)
-2. Locate desired year & month archive.
-3. Click `Source code (zip)` or `Source code (tar.gz)` to download your preferred archive format.
-4. Extract the downloaded archive.
+2. Locate desired year & month archive
+3. Click `Source code (zip)` or `Source code (tar.gz)` to download your preferred archive format
+4. Extract the downloaded archive
+5. Open the extracted directory as a new vault via Obsidian
 
 ### Clone
+
+> [!tip]
+> The [GitHub Desktop](https://desktop.github.com/download/) application (GUI) may be helpful if you are unfamiliar with utilizing [git via command line](https://git-scm.com/book/en/v2/Getting-Started-The-Command-Line)
 
 **Repository**: [https://github.com/dj-riley/djr-bio](https://github.com/dj-riley/djr-bio)
 
