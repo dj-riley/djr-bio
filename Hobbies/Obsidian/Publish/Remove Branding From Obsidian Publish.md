@@ -1,6 +1,6 @@
 ---
 created: 2024-06-29 01:36:29 -04:00
-updated: 2024-07-10 00:18:48 -04:00
+updated: 2024-07-10 15:46:46 -04:00
 ---
 
 %% MIT License<br>Copyright (c) 2024 Dylan Riley <https://djr.bio> %%
@@ -44,7 +44,7 @@ updated: 2024-07-10 00:18:48 -04:00
 	```js
 	// MIT License
 	// Copyright (c) 2024 Dylan Riley <https://djr.bio>
-	// Remove 'Powered by Obsidian' from Publish graph view
+	// publish.js - Remove 'Powered by Obsidian' from Publish graph view
 	
 	(async function setupGraph(retryCount = 0) {
 		const maxRetries = 300;
@@ -85,7 +85,7 @@ updated: 2024-07-10 00:18:48 -04:00
 	```css
 	/* MIT License
 	Copyright (c) 2024 Dylan Riley <https://djr.bio>
-	Remove 'Powered by Obsidian Publish' from Publish site footer */
+	publish.css - Remove 'Powered by Obsidian Publish' from Publish site footer */
 	
 	.site-footer{
 		display: none;
